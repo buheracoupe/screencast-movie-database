@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import SearchBar from "./components/SearchBar";
+import { createContext, useState } from "react";
+import DisplayGrid from "./components/DisplayGrid";
+
+export const MovieContext = createContext();
+
 
 function App() {
+  const [movieData, setMovieData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <MovieContext.Provider value={{movieData, setMovieData, isLoading, setIsLoading }}>
+    <div className="App min-h-lvh bg-orange-600">
+      <SearchBar />
+      <DisplayGrid />
     </div>
+    </MovieContext.Provider>
   );
 }
 
