@@ -50,7 +50,7 @@ function SearchBar() {
   return (
 <form onSubmit={handleSubmit(onSubmit)} className=" flex items-center justify-center p-8">
     <input {...register("title")} className='focus:outline-none p-2' type="text" placeholder="Hancock..." />
-    <button className='p-2 bg-black text-white' type="submit">Find Movie</button>
+    <button className='p-2 bg-black text-white hover:text-orange-800' type="submit">Find Movie</button>
 </form>  )
 }
 
