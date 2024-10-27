@@ -4,16 +4,32 @@ import { MovieContext } from '../App'
 import MovieCard from './MovieCard';
 import { motion } from 'framer-motion';
 
+const loaderVariants = {
+    initial: {
+        opacity: 0,
+        y: 300
+    },
+    animate: {
+        opacity:[0, .3, .5, .7, .8, .9],
+        y: 0,
+        transition: {
+        repeat: Infinity,
+        duration: 3,
+        }
+    }
+  }
+
 
 function DisplayGrid() {
   const { movieData, isLoading } = useContext(MovieContext);
 
+  
   if (isLoading) {
-    return <motion.h2
-     initial={{ opacity: 0, y:250 }}
-     animate={{ opacity: 1, y: 0 }}
-     transition={{ duration: 3 }}
-     className='text-4xl text-center w-full font-bold h-full'>Loading...</motion.h2>
+    return <motion.p
+    variants={loaderVariants}
+     initial= "initial"
+     animate= "animate"
+     className='text-4xl text-center w-full font-bold h-full'>Loading...</motion.p>
   }
 
   return (
