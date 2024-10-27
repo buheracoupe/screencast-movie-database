@@ -12,7 +12,7 @@ function DisplayGrid() {
   }
 
   return (
-<div className="grid gap-4 gap-y-8 auto-fill-grid place-content-center">
+<div className="grid gap-4 gap-y-12 auto-fill-grid place-content-center">
 {movieData.map(movie => {
     return <MovieCard key={movie.node.entity.id} movieData = {movie.node.entity} isLoading={isLoading} />
 })}
