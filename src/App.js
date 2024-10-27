@@ -2,6 +2,7 @@ import SearchBar from "./components/SearchBar";
 import { createContext, useState } from "react";
 import DisplayGrid from "./components/DisplayGrid";
 import logo from "./Assets/screencast-high-resolution-logo-transparent.png"
+
 export const MovieContext = createContext();
 
 
